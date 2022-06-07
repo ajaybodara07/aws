@@ -1,0 +1,17 @@
+language: python
+cache:
+  - apt
+  - pip
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+before_install:
+  - pip install --upgrade pip
+  - pip install pipenv --upgrade
+script:
+  - pipenv install --dev
+  - pytest
+sudo: false
+notifications:
+  slack: watchcloud:rNoT5kJJakPqwLSKuev6oa4C
